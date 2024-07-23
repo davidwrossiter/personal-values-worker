@@ -29,14 +29,14 @@ app.post(
 			messages: [
 				{
 					role: 'system',
-					content: `Please group the words from the list by similarity. Give each
- 					group a title (THAT IS STRICTLY ONE WORD LONG) that represents the group's theme but is not one of the words in the group.
+					content: `The following is a list of personal values, please group the words from the list by similarity. Give each
+ 					group a title (THAT IS STRICTLY ONE WORD LONG) that represents the group's theme but is not one of the words in the group and is not the word "values".
 					Only use words from the provided list. Do Not repeat words in multiple groups. Keep the number of groups between 4 and 6. LIST OF WORDS: ${words}. Your response
 					must look like this : ### Title \n - Word \n - Word \n - Word \n ### Title \n - Word \n - Word \n - Word \n Word
 					STRICTLY DO NOT RETURN ANYTHING ELSE APART FROM THE GROUPS AND CONTAINED WORDS.`,
 				},
 			],
-			model: 'gpt-4o-mini',
+			model: 'gpt-4o',
 		});
 
 		console.log(completion.choices[0].message.content);
